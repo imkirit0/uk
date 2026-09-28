@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { STATS, TICKER, WORDS } from '@/lib/content';
 import { smooth, useMagnet, useReducedMotion, useScrollFrame } from '@/lib/motion';
@@ -47,15 +47,6 @@ export default function Hero() {
     const r = s.getBoundingClientRect(); const p = smooth(0, 1, -r.top / (r.height * 0.75));
     ct.style.opacity = String(1 - p); ct.style.transform = `translateY(${-p * 80}px) scale(${1 - p * 0.06})`;
   }, []));
-
-  const onMove = (e: MouseEvent<HTMLElement>) => {
-    if (rm) return; const r = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-    const mx = x - 0.5, my = y - 0.5;
-    if (card.current) card.current.style.transform = `perspective(1200px) rotateY(${mx * -6}deg) rotateX(${my * 6}deg)`;
-    if (floatA.current) floatA.current.style.transform = `translateY(${my * -14}px)`;
-    if (floatB.current) floatB.current.style.transform = `translateY(${my * 18}px)`;
-  };
 
   return (
     <section id="top" ref={section} className="hero" style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
