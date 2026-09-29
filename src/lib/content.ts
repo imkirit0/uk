@@ -2,8 +2,8 @@ export const SITE = {
   name: 'G-TEC Education UK',
   legalName: 'G-TEC EDUCATION UK Limited',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gtec.uk',
-  phone: '+44 7859 731738',
-  phoneHref: 'tel:+447859731738',
+  phone: '+44 7311 225222',
+  phoneHref: 'tel:+447311225222',
   email: 'ro.uk@gteceducation.com',
   address: {
     street: 'Office 718, Crown House Business Centre, North Circular Road',
@@ -28,11 +28,11 @@ export const NAV: [string, string][] = [
 
 export type Course = { slug: string; cat: string; title: string; desc: string; duration: string; level: string; img: string };
 export const COURSES: Course[] = [
-  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration programme integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '12 months', level: 'Career accelerator', img: '/media/ag.jpg' },
-  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'Artificial Intelligence, Machine Learning, Deep Learning and Generative AI using real-world projects and industry tools.', duration: '9 months', level: 'Intermediate', img: '/media/ai.jpg' },
-  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '8 months', level: 'Beginner to advanced', img: '/media/cs.jpg' },
-  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Become a professional web developer by mastering frontend and backend technologies with live projects.', duration: '10 months', level: 'Job-ready', img: '/media/fs.jpg' },
-  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Data analysis, visualisation, predictive modelling and business intelligence platforms.', duration: '9 months', level: 'Intermediate', img: '/media/ds.jpg' },
+  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'Our year-long career programme. You\'ll work across AI, cloud and automation, and finish ready for a tech role.', duration: '12 months', level: 'Career accelerator', img: '/media/ag.jpg' },
+  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'From the basics of machine learning to deep learning and generative AI, taught through real projects.', duration: '9 months', level: 'Intermediate', img: '/media/ai.jpg' },
+  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Learn to defend systems, test them like an attacker would, and investigate what went wrong.', duration: '8 months', level: 'Beginner to advanced', img: '/media/cs.jpg' },
+  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Learn to build websites and apps from front to back, working on live projects from the start.', duration: '10 months', level: 'Job-ready', img: '/media/fs.jpg' },
+  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Clean data, spot patterns, build forecasts and present it all in dashboards that make sense.', duration: '9 months', level: 'Intermediate', img: '/media/ds.jpg' },
 ];
 export const CATS = ['All', 'Emerging Tech', 'AI & Data', 'Security', 'Development'];
 
@@ -46,16 +46,16 @@ export const STATS: { value: number; format: (v: number) => string; label: strin
 ];
 
 export const SCENES = [
-  { n: '01', kicker: 'Assess', title: 'A consultation, not a sales call.', caption: 'Map your goals with a consultant', body: 'We start by understanding where you are and where you want to be. A G-TEC education consultant maps your background to the right programme, intake and funding route.', tags: ['Free consultation', 'Skills assessment', 'Funding guidance'], img: '/media/interview.jpg' },
-  { n: '02', kicker: 'Train', title: 'Learn on live projects with industry instructors.', caption: 'Live projects, real tools', body: 'Small cohorts at our Park Royal centre, taught by practitioners. Every module ends in something you can show an employer: a deployed app, a model, a security audit.', tags: ['Live projects', 'Industry tools', 'Small cohorts'], img: '/media/train.jpg' },
-  { n: '03', kicker: 'Place', title: 'A certificate recognised in 23+ countries, and a job to use it in.', caption: 'Placement support and job fairs', body: 'Graduate with a globally verifiable G-TEC certificate, then use our placement desk, employer vacancy board and job fairs to land the role.', tags: ['Placement desk', 'Job fairs', 'Global registry'], img: '/media/place.jpg' },
+  { n: '01', kicker: 'Assess', title: 'A proper chat, not a sales pitch.', caption: 'Talk through your goals with a consultant', body: 'First we find out where you are now and where you want to get to. Then one of our consultants helps you pick the right course, start date and way to pay for it.', tags: ['Free consultation', 'Skills assessment', 'Funding guidance'], img: '/media/interview.jpg' },
+  { n: '02', kicker: 'Train', title: 'Learn by building, with instructors who work in tech.', caption: 'Live projects, real tools', body: 'Small classes at our Park Royal centre, taught by people who do this for a living. Every module ends with something you can show an employer, like a live app, a working model or a security audit.', tags: ['Live projects', 'Industry tools', 'Small cohorts'], img: '/media/train.jpg' },
+  { n: '03', kicker: 'Place', title: 'A certificate that counts in 23+ countries, and help finding the job.', caption: 'Placement support and job fairs', body: 'You finish with a G-TEC certificate employers can check online. Then our placement team, vacancy board and job fairs help you find your first role.', tags: ['Placement desk', 'Job fairs', 'Global registry'], img: '/media/place.jpg' },
 ];
 
 export const PILLARS = [
-  { n: '01', title: 'Industry-aligned curricula', desc: 'Programmes designed with employers and refreshed every intake, so what you learn is what the market is hiring for this year.', img: '/media/curric.jpg', navy: false },
-  { n: '02', title: 'University collaborations', desc: 'Pathways into higher study in the UK and abroad, with credits and certifications that travel with you.', img: '/media/uni.jpg', navy: false },
-  { n: '03', title: 'Corporate alliances', desc: 'Skilling partnerships with London businesses that shape our syllabus and hire from our cohorts.', img: '/media/london.jpg', navy: false },
-  { n: '04', title: 'Placement support', desc: 'A dedicated placement desk, vacancy board and G-TEC job fairs across the network.', img: '/media/assess.jpg', navy: true },
+  { n: '01', title: 'Industry-aligned curricula', desc: 'We build our courses with employers and update them for every intake, so you learn what companies are hiring for right now.', img: '/media/curric.jpg', navy: false },
+  { n: '02', title: 'University collaborations', desc: 'Want to keep studying? Our university partners in the UK and abroad offer routes into further study, and your credits come with you.', img: '/media/uni.jpg', navy: false },
+  { n: '03', title: 'Corporate alliances', desc: 'We work with London businesses who help shape what we teach, and who hire our graduates.', img: '/media/london.jpg', navy: false },
+  { n: '04', title: 'Placement support', desc: 'A placement team that knows you by name, a board of live vacancies and regular G-TEC job fairs.', img: '/media/assess.jpg', navy: true },
 ];
 
 export const COUNTRIES: [string, number, number][] = [
@@ -64,8 +64,8 @@ export const COUNTRIES: [string, number, number][] = [
 export const NETWORK_TILES = [['23+', 'Countries'], ['800+', 'Centres'], ['4.3M', 'Alumni'], ['20+', 'Years']];
 
 export const TESTIMONIALS = [
-  { quote: 'The FutureX programme gave me hands-on AI and cloud experience employers actually asked about in interviews. I moved into a solutions role within three months.', name: 'Aisha R.', role: 'FutureX graduate · Cloud Solutions Analyst' },
-  { quote: 'Small cohorts, live projects and instructors who work in the industry. The certificate is recognised across the network, which mattered when I relocated.', name: 'Daniel M.', role: 'Cyber Security & Ethical Hacking' },
-  { quote: 'I retrained from hospitality into full-stack development. The structured path and placement support made the switch realistic.', name: 'Priya S.', role: 'Full Stack Development · Junior Developer' },
-  { quote: 'The data science track was practical from week one. I built a portfolio of dashboards that got me my first analyst role.', name: 'Tomasz K.', role: 'Data Science, Analytics & BI' },
+  { quote: 'Every interview I had asked about the AI and cloud work I did on FutureX. Three months after finishing I started a solutions role.', name: 'Aisha R.', role: 'FutureX graduate · Cloud Solutions Analyst' },
+  { quote: 'My instructor was working in security at the same time as teaching us, and it showed. When I moved countries, my certificate still counted.', name: 'Daniel M.', role: 'Cyber Security & Ethical Hacking' },
+  { quote: 'I was working in hospitality and wanted out. Having a clear plan and a placement team behind me made switching to development feel possible.', name: 'Priya S.', role: 'Full Stack Development · Junior Developer' },
+  { quote: 'We were working with real data from week one. The dashboards I built on the course are what got me my first analyst job.', name: 'Tomasz K.', role: 'Data Science, Analytics & BI' },
 ];

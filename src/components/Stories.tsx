@@ -18,7 +18,7 @@ export default function Stories() {
         <Reveal className="section-head__copy section-head__copy--sm">
           <div className="kicker">Learner stories</div>
           <h2 className="h2">What our learners say.</h2>
-          <p className="lead lead--sm">Drag to browse. Sample quotes shown — swap in UK cohort testimonials.</p>
+          <p className="lead lead--sm">In their own words. Drag or use the arrows to read more.</p>
         </Reveal>
         <div className="stories__controls">
           <button className="round-btn" aria-label="Previous" onClick={() => embla?.scrollPrev()}>←</button>

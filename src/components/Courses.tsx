@@ -43,8 +43,8 @@ export default function Courses() {
         <Reveal className="section-head">
           <div className="section-head__copy">
             <div className="kicker kicker--coral">Professional courses</div>
-            <h2 className="h2" style={{ color: '#fff' }}>Built for the careers employers are hiring for now.</h2>
-            <p className="lead lead--light">Industry-recognised programmes with live projects, real tools and certification recognised across the G-TEC network.</p>
+            <h2 className="h2" style={{ color: '#fff' }}>Courses for the jobs that are actually out there.</h2>
+            <p className="lead lead--light">Every course is built around live projects and the tools you&apos;ll use at work. You finish with a certificate that&apos;s recognised across the G-TEC network.</p>
           </div>
           <div className="cats" role="tablist" aria-label="Filter courses">
             {CATS.map((c) => <button key={c} role="tab" aria-selected={c === cat} className={c === cat ? 'is-active' : ''} onClick={() => setCat(c)}>{c}</button>)}

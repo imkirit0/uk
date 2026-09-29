@@ -75,5 +75,5 @@ def enquire(body: Enquiry) -> dict:
         deliver(payload)
     except Exception as exc:  # noqa: BLE001
         log.exception("enquiry delivery failed")
-        raise HTTPException(status_code=502, detail="We couldn't send your enquiry just now. Please try again or call +44 7859 731738.") from exc
+        raise HTTPException(status_code=502, detail="We couldn't send your enquiry just now. Please try again or call +44 7311 225222.") from exc
     return {"ok": True}

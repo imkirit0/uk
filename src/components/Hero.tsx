@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="hero__shade" style={{ background: 'radial-gradient(circle at center, rgba(0,34,79,0) 0%, rgba(0,34,79,0.95) 100%)', zIndex: 1, pointerEvents: 'none' }} />
       
       <div ref={content} className="wrap hero__content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '1000px', zIndex: 10 }}>
-        <div className="hero__badge"><span className="hero__new">NEW</span><span className="badge-text">Now in London · Wembley–Harrow Corridor</span></div>
+        <div className="hero__badge"><span className="hero__new">NEW</span><span className="badge-text">Now in London · Wembley and Harrow</span></div>
         
         <h1 className="hero__title" ref={titleRef}>
           <span className="char-reveal" style={{ display: 'inline-block' }}>The</span>{' '}
@@ -69,7 +69,7 @@ export default function Hero() {
         </h1>
         
         <p className="hero__lead" ref={subtitleRef} style={{ fontSize: 'clamp(18px, 2vw, 24px)', maxWidth: '700px', margin: '2rem auto', color: 'rgba(255,255,255,0.9)' }}>
-          Industry-aligned technical and professional programmes from a network spanning 23+ countries, 800+ centres and 4.3 million alumni.
+          Practical IT and professional courses in London, backed by a network that has trained 4.3 million people across 800+ centres in 23+ countries.
         </p>
         
         <div className="hero__cta" ref={ctaRef} style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '1rem' }}>

@@ -195,7 +195,7 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 .section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:60px}
 .section-head__copy{max-width:620px}
 .section-head__copy--sm{max-width:560px}
-.section-head__copy .h2{margin-bottom:16px;color:#fff;}
+.section-head__copy .h2{margin-bottom:16px}
 .reveal{opacity:0;transform:translateY(28px)}
 .cats{display:flex;flex-wrap:wrap;gap:8px}
 .cats button{cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#fff;font-weight:600;font-size:13px;padding:12px 20px;border-radius:999px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);backdrop-filter:blur(10px);}

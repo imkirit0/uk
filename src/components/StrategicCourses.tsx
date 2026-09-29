@@ -9,12 +9,12 @@ import Reveal from './Reveal';
 gsap.registerPlugin(ScrollTrigger);
 
 const COURSES = [
-  { id: 'ai', title: 'AI & Machine Learning', icon: Brain, num: '01', desc: 'Master deep learning, neural networks, and generative AI systems with real-world applications.' },
-  { id: 'fs', title: 'Full Stack Development', icon: Code2, num: '02', desc: 'Architect end-to-end web experiences and highly scalable cloud-native applications.' },
-  { id: 'ag', title: 'Agentic AI (FutureX)', icon: Bot, num: '03', desc: 'Build the next generation of autonomous AI agents and intelligent automation workflows.' },
-  { id: 'cs', title: 'Cyber Security', icon: Shield, num: '04', desc: 'Advanced threat detection, ethical hacking, and enterprise-grade InfoSec strategies.' },
-  { id: 'ds', title: 'Data Analytics & BI', icon: BarChart3, num: '05', desc: 'Leverage predictive analytics, big data, and business intelligence to drive decisions.' },
-  { id: 'ar', title: 'AutoCAD & Revit', icon: Building2, num: '06', desc: 'Execute modern building information modelling and precision structural design.' },
+  { id: 'ai', title: 'AI & Machine Learning', icon: Brain, num: '01', desc: 'Learn how modern AI actually works, from neural networks to generative models, and build things with it.' },
+  { id: 'fs', title: 'Full Stack Development', icon: Code2, num: '02', desc: 'Build complete web apps, front to back, and put them live in the cloud.' },
+  { id: 'ag', title: 'Agentic AI (FutureX)', icon: Bot, num: '03', desc: 'Build AI agents that take on real tasks, and automate the repetitive parts of everyday work.' },
+  { id: 'cs', title: 'Cyber Security', icon: Shield, num: '04', desc: 'Find weaknesses before attackers do. Hands-on ethical hacking, threat detection and defence.' },
+  { id: 'ds', title: 'Data Analytics & BI', icon: BarChart3, num: '05', desc: 'Turn messy data into clear answers, with dashboards and forecasts people can act on.' },
+  { id: 'ar', title: 'AutoCAD & Revit', icon: Building2, num: '06', desc: 'Draw, model and plan buildings with the tools architects and engineers use every day.' },
 ];
 
 export default function StrategicCourses() {
@@ -57,9 +57,9 @@ export default function StrategicCourses() {
         
         <Reveal className="strat-std-head">
           <div className="kicker kicker--coral">The Frontier</div>
-          <h2 className="h2 strat-std-title">Strategic Priority Courses</h2>
+          <h2 className="h2 strat-std-title">Where we&apos;re focusing</h2>
           <p className="lead lead--light strat-std-lead">
-            Elite programs designed to build the next decade of digital transformation leaders.
+            Six courses in the skills London employers keep asking us for. Each one is built around real projects, not just lectures.
           </p>
         </Reveal>
 
@@ -89,7 +89,7 @@ export default function StrategicCourses() {
                   <p className="strat-std-card__desc">{c.desc}</p>
                   
                   <div className="strat-std-card__action">
-                    <span>Explore Program</span>
+                    <span>See the course</span>
                     <ArrowUpRight size={18} />
                   </div>
                 </div>

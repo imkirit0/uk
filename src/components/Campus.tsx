@@ -11,8 +11,8 @@ export default function Campus() {
       <div className="wrap campus__inner">
         <Reveal>
           <div className="kicker kicker--coral">Inside the classroom</div>
-          <h2 id="campus-title" className="h2 campus__title">Learn beside people who do the work.</h2>
-          <p className="lead lead--light campus__lead">Small cohorts, practising instructors and real codebases. You leave with projects an employer can open, not just notes.</p>
+          <h2 id="campus-title" className="h2 campus__title">Learn from people who do this for a living.</h2>
+          <p className="lead lead--light campus__lead">Classes are small and our instructors work in the industry. By the end you&apos;ll have real projects to show an employer, not just a folder of notes.</p>
           <a href="#enquire" className="btn btn--primary">Book a free consultation</a>
         </Reveal>
       </div>

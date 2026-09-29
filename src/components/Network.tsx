@@ -110,7 +110,7 @@ export default function Network() {
           <Reveal>
             <div className="kicker kicker--coral">Global network</div>
             <h2 className="h2">One certificate. Recognised on four continents.</h2>
-            <p className="lead lead--light">Your G-TEC qualification is part of a single global registry, verifiable online from any of our centres. Hover a country to find it on the globe.</p>
+            <p className="lead lead--light">Every G-TEC certificate goes on one global register, so an employer anywhere can check it online. Hover over a country to find it on the globe.</p>
           </Reveal>
           <ul className="countries" onMouseLeave={() => { hover.current = ''; setLabel(IDLE); }}>
             {COUNTRIES.map(([n]) => (

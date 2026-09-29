@@ -29,7 +29,7 @@ export default function Enquire() {
       if (!res.ok) { const d = (await res.json().catch(() => null))?.detail; throw new Error(typeof d === 'string' ? d : 'Request failed'); }
       setFirstName(body.name.split(' ')[0] || 'there'); setStep(2);
     } catch (err) {
-      setError(err instanceof Error && err.message !== 'Request failed' ? err.message : `Something went wrong. Please try again or call us on +44 7859 731738.`);
+      setError(err instanceof Error && err.message !== 'Request failed' ? err.message : `Something went wrong. Please try again or call us on +44 7311 225222.`);
     } finally { setBusy(false); }
   }
 
@@ -41,7 +41,7 @@ export default function Enquire() {
           <div className="enquire__intro">
             <div className="kicker kicker--coral">Quick enquiry</div>
             <h2 className="h2 h2--md">Talk to an education consultant.</h2>
-            <p className="lead lead--light lead--sm">Tell us where you want to go. We&apos;ll map the right programme, intake dates and funding options — usually within one working day.</p>
+            <p className="lead lead--light lead--sm">Tell us a bit about yourself and what you&apos;d like to do next. A consultant will get back to you, usually within one working day, with the course, start dates and funding options that fit.</p>
             <ol className="steps">
               {STEPS.map((s, i) => <li key={s} className={i === step ? 'is-on' : i < step ? 'is-done' : ''}><span className="steps__n">{i + 1}</span><span>{s}</span></li>)}
             </ol>
@@ -74,7 +74,7 @@ export default function Enquire() {
               <fieldset className="enquiry__step enquiry__done" hidden={step !== 2}>
                 <div className="enquiry__check" aria-hidden>✓</div>
                 <div className="enquiry__title">Thanks, {firstName}.</div>
-                <p>A consultant will reach out about <strong>{course}</strong> within one working day.</p>
+                <p>We&apos;ve got your enquiry about <strong>{course}</strong>. One of our consultants will be in touch within one working day.</p>
                 <button type="button" className="btn btn--outline btn--sm" onClick={() => { setCourse(''); setStep(0); }}>Submit another</button>
               </fieldset>
             </form>
