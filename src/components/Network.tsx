@@ -22,15 +22,44 @@ export default function Network() {
       renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W, W);
       Object.assign(renderer.domElement.style, { position: 'absolute', inset: '0', width: '100%', height: '100%' });
       el.appendChild(renderer.domElement);
-      const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(38, 1, 0.1, 10); cam.position.z = 3.1;
+      const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(38, 1, 0.1, 100); cam.position.z = 3.1;
       const g = new THREE.Group(); scene.add(g); g.rotation.x = 0.35;
-      const N = 1800, pos = new Float32Array(N * 3);
-      for (let i = 0; i < N; i++) { const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = i * 2.399963; pos[i * 3] = Math.cos(th) * r; pos[i * 3 + 1] = y; pos[i * 3 + 2] = Math.sin(th) * r; }
-      const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-      g.add(new THREE.Points(pg, new THREE.PointsMaterial({ color: 0xffffff, size: 0.014, transparent: true, opacity: 0.55 })));
-      g.add(new THREE.Mesh(new THREE.SphereGeometry(0.985, 32, 32), new THREE.MeshBasicMaterial({ color: 0x004189, transparent: true, opacity: 0.55 })));
-      g.add(new THREE.Mesh(new THREE.SphereGeometry(1, 24, 24), new THREE.MeshBasicMaterial({ color: 0x4878ff, wireframe: true, transparent: true, opacity: 0.07 })));
-      const toVec = (lat: number, lon: number, r = 1.005) => { const phi = (90 - lat) * Math.PI / 180, th = (lon + 180) * Math.PI / 180; return new THREE.Vector3(-r * Math.sin(phi) * Math.cos(th), r * Math.cos(phi), r * Math.sin(phi) * Math.sin(th)); };
+      // Background stars (fixed, outside the globe group)
+      const S = 1200, sp = new Float32Array(S * 3);
+      for (let i = 0; i < S; i++) { const v = new THREE.Vector3().randomDirection().multiplyScalar(20 + Math.random() * 20); sp.set([v.x, v.y, v.z], i * 3); }
+      const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3));
+      scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xffffff, size: 0.08, transparent: true, opacity: 0.7 })));
+      // Earth: day map, city lights on the night side, specular oceans
+      const tl = new THREE.TextureLoader(), tex = (f: string) => { const t = tl.load(`/textures/${f}`); t.anisotropy = 8; return t; };
+      const day = tex('earth_atmos_2048.jpg'); day.colorSpace = THREE.SRGBColorSpace;
+      const night = tex('earth_lights_2048.png'); night.colorSpace = THREE.SRGBColorSpace;
+      const sun = new THREE.Vector3(-1, 0.35, 0.9).normalize();
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 96), new THREE.ShaderMaterial({
+        uniforms: { day: { value: day }, night: { value: night }, spec: { value: tex('earth_specular_2048.jpg') }, sun: { value: sun } },
+        vertexShader: `varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+          void main(){ vUv=uv; vN=normalize(mat3(modelMatrix)*normal); vec4 w=modelMatrix*vec4(position,1.); vV=normalize(cameraPosition-w.xyz); gl_Position=projectionMatrix*viewMatrix*w; }`,
+        fragmentShader: `uniform sampler2D day, night, spec; uniform vec3 sun; varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+          void main(){
+            float l=dot(vN,sun), mixv=smoothstep(-0.15,0.25,l);
+            vec3 d=texture2D(day,vUv).rgb*(0.35+1.1*max(l,0.)), n=texture2D(night,vUv).rgb*vec3(1.,.8,.55)*1.6;
+            float s=texture2D(spec,vUv).r*pow(max(dot(reflect(-sun,vN),vV),0.),40.)*0.35;
+            vec3 c=mix(n+d*0.08,d+s,mixv);
+            float rim=pow(1.-max(dot(vN,vV),0.),3.); c+=vec3(.3,.55,1.)*rim*0.55*(0.3+mixv);
+            gl_FragColor=vec4(c,1.);
+            #include <colorspace_fragment>
+          }`,
+      }));
+      g.add(earth);
+      const clouds = new THREE.Mesh(new THREE.SphereGeometry(1.012, 64, 64), new THREE.MeshLambertMaterial({ map: tex('earth_clouds_1024.png'), transparent: true, opacity: 0.8, depthWrite: false }));
+      g.add(clouds);
+      scene.add(new THREE.DirectionalLight(0xffffff, 2.2).translateOnAxis(sun, 5), new THREE.AmbientLight(0x6688cc, 0.15));
+      // Atmosphere halo (back faces, additive fresnel)
+      scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.14, 64, 64), new THREE.ShaderMaterial({
+        side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+        vertexShader: `varying vec3 vN; varying vec3 vV; void main(){ vN=normalize(normalMatrix*normal); vec4 mv=modelViewMatrix*vec4(position,1.); vV=normalize(-mv.xyz); gl_Position=projectionMatrix*mv; }`,
+        fragmentShader: `varying vec3 vN; varying vec3 vV; void main(){ float i=pow(clamp(0.72+dot(vN,vV),0.,1.),4.); gl_FragColor=vec4(.35,.62,1.,1.)*i*1.4; }`,
+      })));
+      const toVec = (lat: number, lon: number, r = 1.02) => { const phi = (90 - lat) * Math.PI / 180, th = (lon + 180) * Math.PI / 180; return new THREE.Vector3(-r * Math.sin(phi) * Math.cos(th), r * Math.cos(phi), r * Math.sin(phi) * Math.sin(th)); };
       type Marker = { m: InstanceType<typeof THREE.Mesh>; line?: InstanceType<typeof THREE.Line>; ry: number; rx: number };
       const markers: Record<string, Marker> = {}; let ukRing: InstanceType<typeof THREE.Mesh> | undefined;
       const mGeo = new THREE.SphereGeometry(0.02, 12, 12);
@@ -41,14 +70,15 @@ export default function Network() {
         let line: InstanceType<typeof THREE.Line> | undefined;
         if (isUK) {
           ukRing = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.06, 32), new THREE.MeshBasicMaterial({ color: 0xff7a59, transparent: true, opacity: 0.8, side: THREE.DoubleSide }));
-          ukRing.position.copy(toVec(lat, lon, 1.01)); ukRing.lookAt(new THREE.Vector3(0, 0, 0)); g.add(ukRing);
+          ukRing.position.copy(toVec(lat, lon, 1.025)); ukRing.lookAt(new THREE.Vector3(0, 0, 0)); g.add(ukRing);
         } else {
           const curve = new THREE.QuadraticBezierCurve3(toVec(54, -2), toVec((54 + lat) / 2, (-2 + lon) / 2, 1.35), toVec(lat, lon));
-          line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(40)), new THREE.LineBasicMaterial({ color: 0xff7a59, transparent: true, opacity: 0.18 })); g.add(line);
+          line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(40)), new THREE.LineBasicMaterial({ color: 0xffb08a, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })); g.add(line);
         }
         const th = (lon + 180) * Math.PI / 180;
         markers[name] = { m, line, ry: -Math.atan2(-Math.cos(th), Math.sin(th)), rx: lat * Math.PI / 180 * 0.6 };
       }
+      g.rotation.y = markers['United Kingdom'].ry - 0.9; // open on Europe/Africa, drifting towards Asia
       let drag = false, lx = 0, ly = 0, vel = 0;
       const down = (e: PointerEvent) => { drag = true; lx = e.clientX; ly = e.clientY; el.style.cursor = 'grabbing'; hover.current = ''; };
       const up = () => { drag = false; el.style.cursor = 'grab'; };
@@ -62,7 +92,8 @@ export default function Network() {
         const tgt = hover.current ? markers[hover.current] : undefined;
         if (tgt && !drag) { let d = tgt.ry - g.rotation.y; d = Math.atan2(Math.sin(d), Math.cos(d)); g.rotation.y += d * 0.08; g.rotation.x += (tgt.rx - g.rotation.x) * 0.08; }
         else if (!drag && !rm) { g.rotation.y += 0.0022 + vel; vel *= 0.94; }
-        for (const k in markers) { const mk = markers[k], hot = k === hover.current; mk.m.scale.setScalar(hot ? 2.2 : 1); if (mk.line) (mk.line.material as InstanceType<typeof THREE.LineBasicMaterial>).opacity = hot ? 0.9 : 0.18; }
+        for (const k in markers) { const mk = markers[k], hot = k === hover.current; mk.m.scale.setScalar(hot ? 2.2 : 1); if (mk.line) (mk.line.material as InstanceType<typeof THREE.LineBasicMaterial>).opacity = hot ? 1 : 0.35; }
+        clouds.rotation.y += rm ? 0 : 0.0004;
         if (ukRing) ukRing.scale.setScalar(1 + 0.25 * Math.sin(performance.now() / 400));
         renderer.render(scene, cam);
       };

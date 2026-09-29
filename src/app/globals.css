@@ -339,9 +339,7 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 }
 .strat-std-title {
   margin: 16px 0;
-  background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
   font-size: clamp(36px, 5vw, 52px);
   letter-spacing: -0.02em;
 }
@@ -402,10 +400,21 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
   opacity: 1;
 }
 
+.strat-std-card__img {
+  object-fit: cover;
+  opacity: 0.45;
+  transform: scale(1.02);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s;
+}
+.strat-std-card:hover .strat-std-card__img {
+  opacity: 0.6;
+  transform: scale(1.08);
+}
+
 .strat-std-card__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(180deg, rgba(0,20,50,0.55) 0%, rgba(0,20,50,0.35) 35%, rgba(0,12,32,0.92) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -489,3 +498,22 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Campus video band */
+.campus{position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;overflow:hidden;background:var(--deep);color:#fff}
+.campus__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.campus__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,34,79,.92) 0%,rgba(0,34,79,.6) 45%,rgba(0,34,79,.1) 100%),linear-gradient(0deg,rgba(0,34,79,.7),transparent 50%)}
+.campus__inner{position:relative;width:100%;padding-top:120px;padding-bottom:96px}
+.campus__title{max-width:14ch;color:#fff}
+.campus__lead{max-width:520px}
+@media (max-width:700px){.campus{min-height:560px}.campus__inner{padding-bottom:64px}.campus__shade{background:linear-gradient(0deg,rgba(0,34,79,.95) 20%,rgba(0,34,79,.45) 100%)}}
+.campus + .network{margin-top:0}
+
+/* Course card photo header */
+.card__img{position:relative;margin:-32px -32px 8px;aspect-ratio:16/9;overflow:hidden}
+.card__img img{object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.card__img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,34,79,.85))}
+.card:hover .card__img img{transform:scale(1.07)}
+/* Pillar + journey photos: slow zoom on hover */
+.pillar__img img,.journey__frame img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.pillar:hover .pillar__img img,.journey__frame:hover img{transform:scale(1.05)}

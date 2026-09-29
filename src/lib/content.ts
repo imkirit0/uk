@@ -28,11 +28,11 @@ export const NAV: [string, string][] = [
 
 export type Course = { slug: string; cat: string; title: string; desc: string; duration: string; level: string; img: string };
 export const COURSES: Course[] = [
-  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration programme integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '12 months', level: 'Career accelerator', img: '/futurex.png' },
-  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'Artificial Intelligence, Machine Learning, Deep Learning and Generative AI using real-world projects and industry tools.', duration: '9 months', level: 'Intermediate', img: '/ai.png' },
-  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '8 months', level: 'Beginner to advanced', img: '/cyber.png' },
-  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Become a professional web developer by mastering frontend and backend technologies with live projects.', duration: '10 months', level: 'Job-ready', img: '/fullstack.png' },
-  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Data analysis, visualisation, predictive modelling and business intelligence platforms.', duration: '9 months', level: 'Intermediate', img: '/data.png' },
+  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration programme integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '12 months', level: 'Career accelerator', img: '/media/ag.jpg' },
+  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'Artificial Intelligence, Machine Learning, Deep Learning and Generative AI using real-world projects and industry tools.', duration: '9 months', level: 'Intermediate', img: '/media/ai.jpg' },
+  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '8 months', level: 'Beginner to advanced', img: '/media/cs.jpg' },
+  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Become a professional web developer by mastering frontend and backend technologies with live projects.', duration: '10 months', level: 'Job-ready', img: '/media/fs.jpg' },
+  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Data analysis, visualisation, predictive modelling and business intelligence platforms.', duration: '9 months', level: 'Intermediate', img: '/media/ds.jpg' },
 ];
 export const CATS = ['All', 'Emerging Tech', 'AI & Data', 'Security', 'Development'];
 
@@ -46,16 +46,16 @@ export const STATS: { value: number; format: (v: number) => string; label: strin
 ];
 
 export const SCENES = [
-  { n: '01', kicker: 'Assess', title: 'A consultation, not a sales call.', caption: 'Map your goals with a consultant', body: 'We start by understanding where you are and where you want to be. A G-TEC education consultant maps your background to the right programme, intake and funding route.', tags: ['Free consultation', 'Skills assessment', 'Funding guidance'], img: '/students.png' },
-  { n: '02', kicker: 'Train', title: 'Learn on live projects with industry instructors.', caption: 'Live projects, real tools', body: 'Small cohorts at our Park Royal centre, taught by practitioners. Every module ends in something you can show an employer: a deployed app, a model, a security audit.', tags: ['Live projects', 'Industry tools', 'Small cohorts'], img: '/ai.png' },
-  { n: '03', kicker: 'Place', title: 'A certificate recognised in 23+ countries, and a job to use it in.', caption: 'Placement support and job fairs', body: 'Graduate with a globally verifiable G-TEC certificate, then use our placement desk, employer vacancy board and job fairs to land the role.', tags: ['Placement desk', 'Job fairs', 'Global registry'], img: '/fullstack.png' },
+  { n: '01', kicker: 'Assess', title: 'A consultation, not a sales call.', caption: 'Map your goals with a consultant', body: 'We start by understanding where you are and where you want to be. A G-TEC education consultant maps your background to the right programme, intake and funding route.', tags: ['Free consultation', 'Skills assessment', 'Funding guidance'], img: '/media/interview.jpg' },
+  { n: '02', kicker: 'Train', title: 'Learn on live projects with industry instructors.', caption: 'Live projects, real tools', body: 'Small cohorts at our Park Royal centre, taught by practitioners. Every module ends in something you can show an employer: a deployed app, a model, a security audit.', tags: ['Live projects', 'Industry tools', 'Small cohorts'], img: '/media/train.jpg' },
+  { n: '03', kicker: 'Place', title: 'A certificate recognised in 23+ countries, and a job to use it in.', caption: 'Placement support and job fairs', body: 'Graduate with a globally verifiable G-TEC certificate, then use our placement desk, employer vacancy board and job fairs to land the role.', tags: ['Placement desk', 'Job fairs', 'Global registry'], img: '/media/place.jpg' },
 ];
 
 export const PILLARS = [
-  { n: '01', title: 'Industry-aligned curricula', desc: 'Programmes designed with employers and refreshed every intake, so what you learn is what the market is hiring for this year.', img: '/data.png', navy: false },
-  { n: '02', title: 'University collaborations', desc: 'Pathways into higher study in the UK and abroad, with credits and certifications that travel with you.', img: '/campus.png', navy: false },
-  { n: '03', title: 'Corporate alliances', desc: 'Skilling partnerships with London businesses that shape our syllabus and hire from our cohorts.', img: '/cyber.png', navy: false },
-  { n: '04', title: 'Placement support', desc: 'A dedicated placement desk, vacancy board and G-TEC job fairs across the network.', img: '/students.png', navy: true },
+  { n: '01', title: 'Industry-aligned curricula', desc: 'Programmes designed with employers and refreshed every intake, so what you learn is what the market is hiring for this year.', img: '/media/curric.jpg', navy: false },
+  { n: '02', title: 'University collaborations', desc: 'Pathways into higher study in the UK and abroad, with credits and certifications that travel with you.', img: '/media/uni.jpg', navy: false },
+  { n: '03', title: 'Corporate alliances', desc: 'Skilling partnerships with London businesses that shape our syllabus and hire from our cohorts.', img: '/media/london.jpg', navy: false },
+  { n: '04', title: 'Placement support', desc: 'A dedicated placement desk, vacancy board and G-TEC job fairs across the network.', img: '/media/assess.jpg', navy: true },
 ];
 
 export const COUNTRIES: [string, number, number][] = [

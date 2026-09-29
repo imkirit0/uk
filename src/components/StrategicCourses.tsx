@@ -3,6 +3,7 @@ import { useRef, useEffect, MouseEvent } from 'react';
 import { Brain, Code2, Bot, Shield, BarChart3, Building2, ArrowUpRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import Reveal from './Reveal';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -72,7 +73,7 @@ export default function StrategicCourses() {
               {/* Mouse Spotlight */}
               <div className="strat-std-card__spotlight" />
               
-              {/* Background gradient noise */}
+              <Image src={`/media/${c.id}.jpg`} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px" className="strat-std-card__img" />
               <div className="strat-std-card__bg" />
               
               <div className="strat-std-card__content">

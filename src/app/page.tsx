@@ -4,6 +4,7 @@ import Journey from '@/components/Journey';
 import StrategicCourses from '@/components/StrategicCourses';
 import Courses from '@/components/Courses';
 import Why from '@/components/Why';
+import Campus from '@/components/Campus';
 import Network from '@/components/Network';
 import Stories from '@/components/Stories';
 import Enquire from '@/components/Enquire';
@@ -20,6 +21,7 @@ export default function Page() {
         <StrategicCourses />
         <Courses />
         <Why />
+        <Campus />
         <Network />
         <Stories />
         <Enquire />

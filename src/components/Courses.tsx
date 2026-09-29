@@ -53,6 +53,7 @@ export default function Courses() {
         <div ref={grid} className="course-grid">
           {list.map((c) => (
             <article key={c.slug} className="card" onMouseMove={tilt} onMouseLeave={untilt}>
+              <div className="card__img"><Image src={c.img} alt="" fill sizes="(max-width: 700px) 100vw, 380px" /></div>
               <div className="card__header">
                 <span className="card__cat">{c.cat}</span>
                 <h3 className="card__title">{c.title}</h3>
