@@ -18,7 +18,7 @@ export default function Page() {
       <Header />
       <main>
         <Hero />
-        <About />
+        <About more />
         <Journey />
         <StrategicCourses />
         <Courses />
