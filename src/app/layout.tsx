@@ -9,7 +9,7 @@ const sora = Sora({ subsets: ['latin'], weight: ['400', '500', '600', '700', '80
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-dm-sans', display: 'swap' });
 
 const title = 'G-TEC Education UK · IT & professional training in London';
-const description = "The world's largest IT education network, now in the UK. Industry-aligned programmes in AI, cyber security, full stack development and data science at our London centre.";
+const description = 'Part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni. 180-hour programmes in AI, cyber security, full stack development and data science in Park Royal, London.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

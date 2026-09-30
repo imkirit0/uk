@@ -18,22 +18,23 @@ export const SITE = {
     linkedin: 'https://www.linkedin.com/company/g-tec-groupofinstitutions',
   },
   ukprn: '10101903',
+  hq: { name: 'House of G-TEC', street: 'Indus Avenue', locality: 'Calicut - 673002, India', phones: ['+91 495 408 8333', '+91 95269 93944'], email: 'info@gteceducation.com' },
   global: 'https://www.gteceducation.com',
   privacy: 'https://www.gteceducation.com/privacypolicy',
   verify: 'https://www.gtecadmin.com/validation/index.aspx',
 };
 
 export const NAV: [string, string][] = [
-  ['#journey', 'Journey'], ['#courses', 'Courses'], ['#why', 'Why G-TEC'], ['#network', 'Network'], ['#stories', 'Stories'], ['#contact', 'Contact'],
+  ['#about', 'About'], ['#journey', 'Journey'], ['#courses', 'Courses'], ['#why', 'Why G-TEC'], ['#network', 'Network'], ['#stories', 'Stories'], ['#contact', 'Contact'],
 ];
 
 export type Course = { slug: string; cat: string; title: string; desc: string; duration: string; level: string; img: string };
 export const COURSES: Course[] = [
-  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career programme bringing together AI, cloud computing, automation, innovation and emerging tech.', duration: '180 hours', level: 'Career accelerator', img: '/media/ag.jpg' },
-  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'From the basics of machine learning to deep learning and generative AI, taught through real projects.', duration: '180 hours', level: 'Intermediate', img: '/media/ai.jpg' },
-  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '180 hours', level: 'Beginner to advanced', img: '/media/cs.jpg' },
-  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Learn to build websites and apps from front to back, working on live projects from the start.', duration: '180 hours', level: 'Job-ready', img: '/media/fs.jpg' },
-  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Data analysis, visualisation, predictive modelling and business intelligence platforms, using real data.', duration: '180 hours', level: 'Intermediate', img: '/media/ds.jpg' },
+  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration program integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '180 hours', level: 'Career accelerator', img: '/media/ag.jpg' },
+  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'Learn Artificial Intelligence, Machine Learning, Deep Learning and Generative AI using real-world projects and industry tools.', duration: '180 hours', level: 'Intermediate', img: '/media/ai.jpg' },
+  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Develop practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '180 hours', level: 'Beginner to advanced', img: '/media/cs.jpg' },
+  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Become a professional web developer by mastering frontend and backend technologies with live projects.', duration: '180 hours', level: 'Job-ready', img: '/media/fs.jpg' },
+  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & Business Intelligence', desc: 'Gain expertise in data analysis, visualisation, predictive modelling and business intelligence platforms.', duration: '180 hours', level: 'Intermediate', img: '/media/ds.jpg' },
 ];
 export const CATS = ['All', 'Emerging Tech', 'AI & Data', 'Security', 'Development'];
 

@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import About from '@/components/About';
 import Journey from '@/components/Journey';
 import StrategicCourses from '@/components/StrategicCourses';
 import Courses from '@/components/Courses';
@@ -17,6 +18,7 @@ export default function Page() {
       <Header />
       <main>
         <Hero />
+        <About />
         <Journey />
         <StrategicCourses />
         <Courses />

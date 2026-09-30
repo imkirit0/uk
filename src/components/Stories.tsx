@@ -1,14 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import Reveal from './Reveal';
 import { TESTIMONIALS } from '@/lib/content';
-import { useReducedMotion } from '@/lib/motion';
 
 export default function Stories() {
-  const rm = useReducedMotion();
-  const [ref, embla] = useEmblaCarousel({ loop: true, align: 'start' }, rm ? [] : [Autoplay({ delay: 5500, stopOnInteraction: false })]);
+  const [ref, embla] = useEmblaCarousel({ loop: true, align: 'start' });
   const [idx, setIdx] = useState(0);
   useEffect(() => { if (!embla) return; const on = () => setIdx(embla.selectedScrollSnap()); embla.on('select', on); return () => { embla.off('select', on); }; }, [embla]);
 
