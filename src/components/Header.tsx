@@ -2,6 +2,7 @@
 import { useCallback, useRef, useState } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { ArrowUpRight, Phone } from 'lucide-react';
 import { NAV, SITE } from '@/lib/content';
 import { useMagnet, useReducedMotion, useScrollFrame } from '@/lib/motion';
 
@@ -34,12 +35,12 @@ export default function Header() {
         <div className="wrap header__bar">
           <a href="/#top" className="brand" aria-label="G-TEC Education UK, back to top">
             <Image src="/logo-mark.png" alt="G-TEC Education" width={79} height={48} className="brand__logo" style={{ width: "auto", height: 48 }} priority />
-            <span className="brand__region">UNITED KINGDOM</span>
+            <span className="brand__region"><span className="brand__dot" aria-hidden />United Kingdom</span>
           </a>
           <nav className="nav" aria-label="Primary">{links}</nav>
           <div className="header__actions">
-            <a href={SITE.phoneHref} className="header__phone">{SITE.phone}</a>
-            <a href={path === '/' ? '#enquire' : '/#enquire'} className="btn btn--primary btn--sm" {...magnet}>Enquire now</a>
+            <a href={SITE.phoneHref} className="header__phone" aria-label={`Call us on ${SITE.phone}`}><span className="header__phone-icon"><Phone size={15} strokeWidth={2} /></span><span className="header__phone-num">{SITE.phone}</span></a>
+            <a href={path === '/' ? '#enquire' : '/#enquire'} className="btn btn--primary btn--sm" {...magnet}>Enquire now <ArrowUpRight size={16} strokeWidth={2.25} /></a>
             <button className="burger" aria-label="Menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((o) => !o)}>
               <span /><span /><span />
             </button>

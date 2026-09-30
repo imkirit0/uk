@@ -57,17 +57,24 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 
 /* ---- header ---- */
 .progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--red),var(--coral));z-index:60}
-.header{position:sticky;top:0;z-index:50;background:#fff;transition:background .3s,box-shadow .3s}
-.header.is-scrolled{background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 10px 30px -18px rgba(0,65,137,.35)}
-.header__bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand__logo{height:48px;width:auto;display:block}
-.brand__region{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.16em;padding-left:12px;border-left:1px solid rgba(0,65,137,.15)}
-.nav{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500}
-.nav a{padding:8px 14px;border-radius:999px;white-space:nowrap;transition:all .25s}
-.nav a.is-active{color:var(--red);background:rgba(224,32,28,.08)}
-.header__actions{display:flex;align-items:center;gap:12px}
-.header__phone{font-size:14px;font-weight:600;white-space:nowrap}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgba(0,65,137,.07);transition:background .3s,box-shadow .3s,border-color .3s}
+.header.is-scrolled{background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);border-color:transparent;box-shadow:0 10px 30px -18px rgba(0,65,137,.35)}
+.header__bar{max-width:1360px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand__logo{height:50px;width:auto;display:block;transition:transform .4s var(--ease)}
+.brand:hover .brand__logo{transform:scale(1.04)}
+.brand__region{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;color:var(--red);letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:rgba(224,32,28,.07);white-space:nowrap}
+.brand__dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(224,32,28,.18)}
+.nav{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:500;padding:5px;border-radius:999px;background:rgba(0,65,137,.04);border:1px solid rgba(0,65,137,.06)}
+.nav a{padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .25s,color .25s,box-shadow .25s}
+.nav a:hover{background:#fff;color:var(--navy);box-shadow:0 4px 12px -6px rgba(0,34,79,.3)}
+.nav a.is-active{color:var(--red);background:#fff;box-shadow:0 4px 12px -6px rgba(0,34,79,.3)}
+.header__actions{display:flex;align-items:center;gap:14px}
+.header__phone{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;white-space:nowrap}
+.header__phone-icon{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(0,65,137,.15);transition:all .25s}
+.header__phone:hover .header__phone-icon{background:var(--red);border-color:var(--red);color:#fff}
+@media (max-width:1320px){.header__phone-num{display:none}}
+@media (max-width:1180px){.brand__region{display:none}}
 .burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(0,65,137,.12);background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
 .burger span{width:18px;height:2px;background:var(--navy);display:block}
 .mobile-menu{display:flex;flex-direction:column;gap:4px;padding:8px 24px 20px;background:#fff;border-top:1px solid rgba(0,65,137,.08)}
@@ -84,7 +91,7 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 }
 
 /* ---- hero ---- */
-.hero{position:relative;background:var(--deep);color:#fff;overflow:hidden;min-height:calc(100vh - 72px);display:flex;align-items:center;padding-bottom:60px}
+.hero{position:relative;background:var(--deep);color:#fff;overflow:hidden;min-height:calc(100vh - 80px);display:flex;align-items:center;padding-bottom:60px}
 .hero__fluid{position:absolute;inset:0;width:100%;height:100%;display:block;transform-origin:center;will-change:transform}
 .hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,34,79,.15),rgba(0,34,79,.55) 100%)}
 .hero__content{position:relative;padding-top:120px;padding-bottom:80px;width:100%;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity}
