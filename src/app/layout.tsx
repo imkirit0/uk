@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: '/', siteName: SITE.name, locale: 'en_GB', type: 'website', images: [{ url: '/logo.png', width: 3860, height: 2641, alt: 'G-TEC Education' }] },
   twitter: { card: 'summary_large_image', title, description, images: ['/logo.png'] },
   robots: { index: true, follow: true },
-  icons: { icon: '/logo.png' },
 };
 
 const jsonLd = {

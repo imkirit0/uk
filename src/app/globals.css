@@ -61,7 +61,7 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 .header.is-scrolled{background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 10px 30px -18px rgba(0,65,137,.35)}
 .header__bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand__logo{height:48px;width:auto;border-radius:8px;display:block}
+.brand__logo{height:48px;width:auto;display:block}
 .brand__region{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.16em;padding-left:12px;border-left:1px solid rgba(0,65,137,.15)}
 .nav{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500}
 .nav a{padding:8px 14px;border-radius:999px;white-space:nowrap;transition:all .25s}
@@ -244,6 +244,13 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 .globe__glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(72,120,255,.35),transparent 70%);filter:blur(30px)}
 .globe__label{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,.55);white-space:nowrap}
 
+/* ---- about page ---- */
+.page-intro{background:var(--deep);color:#fff;padding:120px 0 100px}
+.page-intro__title{color:#fff;max-width:900px}
+.page-intro__stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;margin-top:48px;max-width:760px}
+.page-intro__stats strong{display:block;font-family:var(--sora);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--coral)}
+.page-intro__stats span{font-size:14px;color:rgba(255,255,255,.7)}
+
 /* ---- about ---- */
 .about{padding-top:120px;padding-bottom:40px}
 .about__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:start}
@@ -321,7 +328,7 @@ fieldset{border:none;padding:0;margin:0;min-width:0}
 .footer{border-top:1px solid rgba(0,65,137,.08);background:#fff}
 .footer__bar{padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;font-size:13px;color:rgba(0,65,137,.6)}
 .footer__brand{display:flex;align-items:center;gap:12px}
-.footer__brand img{height:36px;width:auto;border-radius:6px}
+.footer__brand img{height:36px;width:auto}
 .footer__links{display:flex;gap:22px;flex-wrap:wrap}
 .footer__links a{color:rgba(0,65,137,.6)}
 

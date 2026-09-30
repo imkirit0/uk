@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useRef, useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { NAV, SITE } from '@/lib/content';
 import { useMagnet, useReducedMotion, useScrollFrame } from '@/lib/motion';
 
@@ -10,6 +11,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const progress = useRef<HTMLDivElement>(null);
   const rm = useReducedMotion();
+  const path = usePathname();
   const magnet = useMagnet(rm);
 
   useScrollFrame(useCallback(() => {
@@ -17,12 +19,12 @@ export default function Header() {
     if (progress.current) progress.current.style.width = (doc > 0 ? (y / doc) * 100 : 0).toFixed(2) + '%';
     setScrolled(y > 24);
     let a = '';
-    for (const [href] of NAV) { const el = document.querySelector(href); if (el && el.getBoundingClientRect().top <= vh * 0.45) a = href; }
+    for (const [href] of NAV) { if (!href.startsWith('#')) continue; const el = document.querySelector(href); if (el && el.getBoundingClientRect().top <= vh * 0.45) a = href; }
     setActive(a);
   }, []));
 
   const links = NAV.map(([href, label]) => (
-    <a key={href} href={href} className={active === href ? 'is-active' : ''} onClick={() => setOpen(false)}>{label}</a>
+    <a key={href} href={href.startsWith('#') ? `/${href}` : href} className={active === href || path === href ? 'is-active' : ''} onClick={() => setOpen(false)}>{label}</a>
   ));
 
   return (
@@ -30,14 +32,14 @@ export default function Header() {
       <div ref={progress} className="progress" aria-hidden />
       <header className={`header${scrolled ? ' is-scrolled' : ''}`}>
         <div className="wrap header__bar">
-          <a href="#top" className="brand" aria-label="G-TEC Education UK, back to top">
-            <Image src="/logo.png" alt="G-TEC Education" width={70} height={48} className="brand__logo" style={{ width: "auto", height: 48 }} priority />
+          <a href="/#top" className="brand" aria-label="G-TEC Education UK, back to top">
+            <Image src="/logo-mark.png" alt="G-TEC Education" width={79} height={48} className="brand__logo" style={{ width: "auto", height: 48 }} priority />
             <span className="brand__region">UNITED KINGDOM</span>
           </a>
           <nav className="nav" aria-label="Primary">{links}</nav>
           <div className="header__actions">
             <a href={SITE.phoneHref} className="header__phone">{SITE.phone}</a>
-            <a href="#enquire" className="btn btn--primary btn--sm" {...magnet}>Enquire now</a>
+            <a href={path === '/' ? '#enquire' : '/#enquire'} className="btn btn--primary btn--sm" {...magnet}>Enquire now</a>
             <button className="burger" aria-label="Menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((o) => !o)}>
               <span /><span /><span />
             </button>
