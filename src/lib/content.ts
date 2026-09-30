@@ -17,6 +17,7 @@ export const SITE = {
     instagram: 'https://www.instagram.com/gtec.uk/',
     linkedin: 'https://www.linkedin.com/company/g-tec-groupofinstitutions',
   },
+  ukprn: '10101903',
   global: 'https://www.gteceducation.com',
   privacy: 'https://www.gteceducation.com/privacypolicy',
   verify: 'https://www.gtecadmin.com/validation/index.aspx',
@@ -28,11 +29,11 @@ export const NAV: [string, string][] = [
 
 export type Course = { slug: string; cat: string; title: string; desc: string; duration: string; level: string; img: string };
 export const COURSES: Course[] = [
-  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'Our year-long career programme. You\'ll work across AI, cloud and automation, and finish ready for a tech role.', duration: '12 months', level: 'Career accelerator', img: '/media/ag.jpg' },
-  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'From the basics of machine learning to deep learning and generative AI, taught through real projects.', duration: '9 months', level: 'Intermediate', img: '/media/ai.jpg' },
-  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Learn to defend systems, test them like an attacker would, and investigate what went wrong.', duration: '8 months', level: 'Beginner to advanced', img: '/media/cs.jpg' },
-  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Learn to build websites and apps from front to back, working on live projects from the start.', duration: '10 months', level: 'Job-ready', img: '/media/fs.jpg' },
-  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Clean data, spot patterns, build forecasts and present it all in dashboards that make sense.', duration: '9 months', level: 'Intermediate', img: '/media/ds.jpg' },
+  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career programme bringing together AI, cloud computing, automation, innovation and emerging tech.', duration: '180 hours', level: 'Career accelerator', img: '/media/ag.jpg' },
+  { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'From the basics of machine learning to deep learning and generative AI, taught through real projects.', duration: '180 hours', level: 'Intermediate', img: '/media/ai.jpg' },
+  { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '180 hours', level: 'Beginner to advanced', img: '/media/cs.jpg' },
+  { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Learn to build websites and apps from front to back, working on live projects from the start.', duration: '180 hours', level: 'Job-ready', img: '/media/fs.jpg' },
+  { slug: 'data', cat: 'AI & Data', title: 'Data Science, Analytics & BI', desc: 'Data analysis, visualisation, predictive modelling and business intelligence platforms, using real data.', duration: '180 hours', level: 'Intermediate', img: '/media/ds.jpg' },
 ];
 export const CATS = ['All', 'Emerging Tech', 'AI & Data', 'Security', 'Development'];
 

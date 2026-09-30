@@ -85,6 +85,7 @@ export default function StrategicCourses() {
                 </div>
                 
                 <div className="strat-std-card__bottom">
+                  <span className="strat-std-card__hours">180 hours</span>
                   <h3 className="strat-std-card__title">{c.title}</h3>
                   <p className="strat-std-card__desc">{c.desc}</p>
                   

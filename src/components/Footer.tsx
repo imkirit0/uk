@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap footer__bar">
         <div className="footer__brand">
           <Image src="/logo.png" alt="" width={53} height={36} style={{ width: "auto", height: 36 }} />
-          <span>© {new Date().getFullYear()} {SITE.legalName}. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} {SITE.legalName}. All rights reserved. Registered with the UK Register of Learning Providers (UKPRN: {SITE.ukprn}).</span>
         </div>
         <div className="footer__links">
           <a href={SITE.privacy}>Privacy policy</a>
