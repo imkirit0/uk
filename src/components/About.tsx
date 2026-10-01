@@ -5,7 +5,7 @@ import { SITE } from '@/lib/content';
 
 const POINTS = [
   { icon: MapPin, title: 'Park Royal, London', desc: 'Our regional headquarters sits in the Wembley–Harrow Corridor, at the heart of London’s commercial hub.' },
-  { icon: UserRound, title: 'Led by Mr. Shammas Kamal', desc: 'UK operations that bridge local industry demand with high-quality education.' },
+  { icon: UserRound, title: 'Led by Mr. Shammas Kamaludeen', desc: 'UK operations that bridge local industry demand with high-quality education.' },
   { icon: Handshake, title: 'Universities and employers', desc: 'University collaborations and strategic corporate alliances behind every course.' },
 ];
 
