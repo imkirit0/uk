@@ -10,8 +10,8 @@ import Reveal from '@/components/Reveal';
 import { NETWORK_TILES, SITE } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'About us · G-TEC Education UK',
-  description: 'G-TEC Education UK is part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni, with its regional headquarters in Park Royal, London.',
+  title: 'About us · G-TEC EDUCATION UK',
+  description: 'G-TEC EDUCATION UK is part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni, with its regional headquarters in Park Royal, London.',
   alternates: { canonical: '/about' },
 };
 

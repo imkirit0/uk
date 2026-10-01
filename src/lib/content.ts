@@ -1,5 +1,5 @@
 export const SITE = {
-  name: 'G-TEC Education UK',
+  name: 'G-TEC EDUCATION UK',
   legalName: 'G-TEC EDUCATION UK Limited',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gtec.uk',
   phone: '+44 7311 225222',

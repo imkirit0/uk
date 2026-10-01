@@ -27,8 +27,14 @@ export default function About({ more = false }: { more?: boolean }) {
           </div>
         </div>
         <div className="about__body">
-          <div className="kicker">About G-TEC UK</div>
-          <h2 className="h2 h2--md">Welcome to <span className="about__accent">G-TEC</span> Education UK.</h2>
+          <div className="about__kicker"><span className="brand__dot" /> About G-TEC UK</div>
+          <h2 className="h2 h2--md about__title">
+            <span className="about__welcome">Welcome to</span>
+            <span className="about__brand">
+              <span className="about__accent">G-TEC EDUCATION</span>
+              <span className="about__uk">UK</span>
+            </span>
+          </h2>
           <p className="lead">A premier global training network empowering individuals and businesses through industry-aligned technical and professional education. With 23+ countries, 800+ centres and 4.3M+ alumni behind us, G-TEC brings more than two decades of skilling to the United Kingdom.</p>
           <ul className="about__points">
             {POINTS.map((p) => (

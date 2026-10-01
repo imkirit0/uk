@@ -33,8 +33,8 @@ export default function Header() {
       <div ref={progress} className="progress" aria-hidden />
       <header className={`header${scrolled ? ' is-scrolled' : ''}`}>
         <div className="wrap header__bar">
-          <a href="/#top" className="brand" aria-label="G-TEC Education UK, back to top">
-            <Image src="/logo-mark.png" alt="G-TEC Education" width={79} height={48} className="brand__logo" style={{ width: "auto", height: 48 }} priority />
+          <a href="/#top" className="brand" aria-label="G-TEC EDUCATION UK, back to top">
+            <Image src="/logo-mark.png" alt="G-TEC EDUCATION" width={79} height={48} className="brand__logo" style={{ width: "auto", height: 48 }} priority />
             <span className="brand__region"><span className="brand__dot" aria-hidden />United Kingdom</span>
           </a>
           <nav className="nav" aria-label="Primary">{links}</nav>

@@ -33,7 +33,7 @@ export default function Contact() {
       </Reveal>
       <Reveal className="contact__map">
         <iframe
-          title="Map of G-TEC Education UK, Crown House Business Centre, London NW10 7PN"
+          title="Map of G-TEC EDUCATION UK, Crown House Business Centre, London NW10 7PN"
           src="https://maps.google.com/maps?q=Crown+House+Business+Centre,+North+Circular+Road,+London+NW10+7PN&z=15&output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

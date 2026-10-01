@@ -8,7 +8,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 const sora = Sora({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800'], variable: '--font-sora', display: 'swap' });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-dm-sans', display: 'swap' });
 
-const title = 'G-TEC Education UK · IT & professional training in London';
+const title = 'G-TEC EDUCATION UK · IT & professional training in London';
 const description = 'Part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni. 180-hour programmes in AI, cyber security, full stack development and data science in Park Royal, London.';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/' },
-  openGraph: { title, description, url: '/', siteName: SITE.name, locale: 'en_GB', type: 'website', images: [{ url: '/logo.png', width: 3860, height: 2641, alt: 'G-TEC Education' }] },
+  openGraph: { title, description, url: '/', siteName: SITE.name, locale: 'en_GB', type: 'website', images: [{ url: '/logo.png', width: 3860, height: 2641, alt: 'G-TEC EDUCATION' }] },
   twitter: { card: 'summary_large_image', title, description, images: ['/logo.png'] },
   robots: { index: true, follow: true },
 };
@@ -32,7 +32,7 @@ const jsonLd = {
   email: SITE.email,
   address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.locality, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
   sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.linkedin, SITE.global],
-  parentOrganization: { '@type': 'Organization', name: 'G-TEC Education', url: SITE.global },
+  parentOrganization: { '@type': 'Organization', name: 'G-TEC EDUCATION', url: SITE.global },
   hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Professional courses', itemListElement: COURSES.map((c) => ({ '@type': 'Course', name: c.title, description: c.desc, provider: { '@type': 'Organization', name: SITE.name } })) },
 };
 
