@@ -19,6 +19,7 @@ export const SITE = {
   },
   ukprn: '10101903',
   hq: { name: 'House of G-TEC', street: 'Indus Avenue', locality: 'Calicut - 673002, India', phones: ['+91 495 408 8333', '+91 95269 93944'], email: 'info@gteceducation.com' },
+  me: { name: 'Al Qusais G-TEC EDUCATION Institute', street: 'Villa 19', locality: 'Al Qusais 2, Dubai, United Arab Emirates', phones: ['+971 4 266 5884', '+971 50 398 0768'] },
   global: 'https://www.gteceducation.com',
   privacy: 'https://www.gteceducation.com/privacypolicy',
   verify: 'https://www.gtecadmin.com/validation/index.aspx',
