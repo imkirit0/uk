@@ -6,23 +6,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
 import Enquire from '@/components/Enquire';
-import { ALL_COURSES, FOCUS_COURSES, SITE } from '@/lib/content';
+import { FOCUS_COURSES, SITE } from '@/lib/content';
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
-export const generateStaticParams = () => ALL_COURSES.map(({ slug }) => ({ slug }));
+export const generateStaticParams = () => FOCUS_COURSES.map(({ slug }) => ({ slug }));
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const c = ALL_COURSES.find((x) => x.slug === slug);
+  const c = FOCUS_COURSES.find((x) => x.slug === slug);
   if (!c) return {};
   return { title: `${c.title} · ${SITE.name}`, description: c.blurb, alternates: { canonical: `/courses/${c.slug}` } };
 }
 
 export default async function CoursePage({ params }: Props) {
   const { slug } = await params;
-  const c = ALL_COURSES.find((x) => x.slug === slug);
+  const c = FOCUS_COURSES.find((x) => x.slug === slug);
   if (!c) notFound();
   return (
     <div className="page">
@@ -36,7 +36,7 @@ export default async function CoursePage({ params }: Props) {
               <p className="lead lead--light">{c.blurb}</p>
               <div className="course-detail__ctas">
                 <a href="#enquire" className="btn btn--primary">Enquire about this course <ArrowUpRight size={16} /></a>
-                {c.pdf && <a href={`/course/${encodeURIComponent(c.pdf)}`} className="btn btn--ghost" download><Download size={16} /> Download brochure</a>}
+                <a href={`/course/${encodeURIComponent(c.pdf)}`} className="btn btn--ghost" download><Download size={16} /> Download brochure</a>
               </div>
             </Reveal>
             <div className="course-hero__img"><Image src={`/media/${c.img}.jpg`} alt="" fill sizes="(max-width: 900px) 100vw, 480px" priority /></div>
@@ -69,9 +69,9 @@ export default async function CoursePage({ params }: Props) {
         <section className="course-more">
           <div className="wrap">
             <div className="kicker">Keep exploring</div>
-            <h2 className="h3">{FOCUS_COURSES.includes(c) ? 'Other AI programmes' : 'Other professional courses'}</h2>
+            <h2 className="h3">Other AI programmes</h2>
             <div className="course-more__grid">
-              {(FOCUS_COURSES.includes(c) ? FOCUS_COURSES : ALL_COURSES.filter((x) => !FOCUS_COURSES.includes(x))).filter((x) => x.slug !== c.slug).map((x) => (
+              {FOCUS_COURSES.filter((x) => x.slug !== c.slug).map((x) => (
                 <a key={x.slug} href={`/courses/${x.slug}`} className="course-more__card">
                   <span className="course-more__meta">{x.level} · {x.duration}</span>
                   <strong>{x.title}</strong>

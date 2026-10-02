@@ -44,7 +44,7 @@ export default function Courses() {
           <div className="section-head__copy">
             <div className="kicker kicker--coral">Professional courses</div>
             <h2 className="h2" style={{ color: '#fff' }}>Explore our professional courses.</h2>
-            <p className="lead lead--light">Build your future with industry-recognised programmes designed to prepare you for today&apos;s most in-demand careers. Every course runs for 180 hours.</p>
+            <p className="lead lead--light">Build your future with industry-recognised programmes designed to prepare you for today&apos;s most in-demand careers. From your first prompt to production AI agents and AWS certification.</p>
           </div>
           <div className="cats" role="tablist" aria-label="Filter courses">
             {CATS.map((c) => <button key={c} role="tab" aria-selected={c === cat} className={c === cat ? 'is-active' : ''} onClick={() => setCat(c)}>{c}</button>)}

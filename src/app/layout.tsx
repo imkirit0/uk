@@ -9,7 +9,7 @@ const display = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['400', '500', '
 const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 
 const title = 'G-TEC EDUCATION UK · IT & professional training in London';
-const description = 'Part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni. 180-hour programmes in AI, cyber security, full stack development and data science in Park Royal, London.';
+const description = 'Part of a global training network spanning 23+ countries, 800+ centres and 4.3M+ alumni. Generative AI, RAG, AI agents and AWS AI certification programmes in Park Royal, London.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
