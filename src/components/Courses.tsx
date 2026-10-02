@@ -11,10 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Courses() {
   const [cat, setCat] = useState('All');
+  const [all, setAll] = useState(false);
   const grid = useRef<HTMLDivElement>(null);
   const rm = useReducedMotion();
   const first = useRef(true);
-  const list = COURSES.filter((c) => cat === 'All' || c.cat === cat);
+  const matches = COURSES.filter((c) => cat === 'All' || c.cat === cat);
+  const list = all ? matches : matches.slice(0, 3);
 
   useEffect(() => {
     const cards = grid.current?.querySelectorAll('.card'); if (!cards?.length) return;
@@ -24,7 +26,7 @@ export default function Courses() {
     const tw = first.current ? gsap.to(cards, { ...opts, scrollTrigger: { trigger: grid.current, start: 'top 82%' } }) : gsap.to(cards, opts);
     first.current = false;
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
-  }, [cat, rm]);
+  }, [cat, all, rm]);
 
   const tilt = (e: MouseEvent<HTMLElement>) => {
     if (rm) return; const el = e.currentTarget, r = el.getBoundingClientRect();
@@ -44,10 +46,10 @@ export default function Courses() {
           <div className="section-head__copy">
             <div className="kicker kicker--coral">Professional courses</div>
             <h2 className="h2" style={{ color: '#fff' }}>Explore our professional courses.</h2>
-            <p className="lead lead--light">Build your future with industry-recognised programmes designed to prepare you for today&apos;s most in-demand careers. From your first prompt to production AI agents and AWS certification.</p>
+            <p className="lead lead--light">Build your future with industry-recognised programmes designed to prepare you for today&apos;s most in-demand careers. Generative AI, machine learning, data, cyber security and full-stack development.</p>
           </div>
           <div className="cats" role="tablist" aria-label="Filter courses">
-            {CATS.map((c) => <button key={c} role="tab" aria-selected={c === cat} className={c === cat ? 'is-active' : ''} onClick={() => setCat(c)}>{c}</button>)}
+            {CATS.map((c) => <button key={c} role="tab" aria-selected={c === cat} className={c === cat ? 'is-active' : ''} onClick={() => { setCat(c); setAll(false); }}>{c}</button>)}
           </div>
         </Reveal>
         <div ref={grid} className="course-grid">
@@ -68,6 +70,13 @@ export default function Courses() {
             </article>
           ))}
         </div>
+        {matches.length > 3 && (
+          <div className="courses__more">
+            <button type="button" className="btn btn--glass" aria-expanded={all} onClick={() => { if (all) grid.current?.scrollIntoView({ block: 'start' }); setAll(!all); }}>
+              {all ? 'Show fewer courses' : `View all ${matches.length} courses`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

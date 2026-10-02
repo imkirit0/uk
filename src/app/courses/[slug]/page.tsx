@@ -69,9 +69,9 @@ export default async function CoursePage({ params }: Props) {
         <section className="course-more">
           <div className="wrap">
             <div className="kicker">Keep exploring</div>
-            <h2 className="h3">Other AI programmes</h2>
+            <h2 className="h3">Related courses</h2>
             <div className="course-more__grid">
-              {FOCUS_COURSES.filter((x) => x.slug !== c.slug).map((x) => (
+              {[...FOCUS_COURSES.filter((x) => x.slug !== c.slug && x.cat === c.cat), ...FOCUS_COURSES.filter((x) => x.cat !== c.cat)].slice(0, 4).map((x) => (
                 <a key={x.slug} href={`/courses/${x.slug}`} className="course-more__card">
                   <span className="course-more__meta">{x.level} · {x.duration}</span>
                   <strong>{x.title}</strong>
