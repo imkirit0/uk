@@ -31,7 +31,7 @@ export const NAV: [string, string][] = [
 
 export type Course = { slug: string; cat: string; title: string; desc: string; duration: string; level: string; img: string };
 export const COURSES: Course[] = [
-  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration program integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '180 hours', level: 'Career accelerator', img: '/media/ag.jpg' },
+  { slug: 'futurex', cat: 'Emerging Tech', title: 'FutureX', desc: 'An advanced career acceleration programme integrating AI, cloud computing, automation, innovation and emerging technologies.', duration: '180 hours', level: 'Career accelerator', img: '/media/ag.jpg' },
   { slug: 'ai-ml', cat: 'AI & Data', title: 'AI & Machine Learning', desc: 'Learn Artificial Intelligence, Machine Learning, Deep Learning and Generative AI using real-world projects and industry tools.', duration: '180 hours', level: 'Intermediate', img: '/media/ai.jpg' },
   { slug: 'cyber', cat: 'Security', title: 'Cyber Security & Ethical Hacking', desc: 'Develop practical skills in cyber defence, penetration testing, ethical hacking and digital forensics.', duration: '180 hours', level: 'Beginner to advanced', img: '/media/cs.jpg' },
   { slug: 'fullstack', cat: 'Development', title: 'Full Stack Development', desc: 'Become a professional web developer by mastering frontend and backend technologies with live projects.', duration: '180 hours', level: 'Job-ready', img: '/media/fs.jpg' },
@@ -73,7 +73,7 @@ export const TESTIMONIALS = [
   { quote: 'We were working with real data from week one. The dashboards I built on the course are what got me my first analyst job.', name: 'Tomasz K.', role: 'Data Science, Analytics & BI' },
 ];
 
-export type FocusCourse = { slug: string; img: string; level: string; kicker: string; title: string; blurb: string; duration: string; intro: string[]; modules: string[]; pdf: string };
+export type FocusCourse = { slug: string; img: string; level: string; kicker: string; title: string; blurb: string; duration: string; intro: string[]; modules: string[]; pdf?: string };
 export const FOCUS_COURSES: FocusCourse[] = [
   {
     slug: 'generative-ai-applied-tools', blurb: 'Get fluent with modern AI tools, from prompting LLMs and vision models to building your first AI apps.', img: 'ai', level: 'Level 1', kicker: 'Certificate in', title: 'Generative AI & Applied AI Tools', duration: '120 hours',
@@ -89,7 +89,7 @@ export const FOCUS_COURSES: FocusCourse[] = [
   },
   {
     slug: 'ai-agents-automation-deployment', blurb: 'Design, build and deploy autonomous agents with LangGraph, CrewAI, browser agents and MCP.', img: 'ag', level: 'Level 3', kicker: 'Professional Certificate in', title: 'AI Agents, Automation & Deployment', duration: '120 hours',
-    intro: ['This Level 3 programme is designed for advanced undergraduates preparing for AI internships and careers in agentic AI systems. The focus is on AI agents, multi-agent architectures, browser agents and MCP (Multi-Modal + Code + Tool-Calling) frameworks: the frontier of applied AI today.', 'You gain a strong theoretical foundation along with hands-on experience designing, building and deploying autonomous AI agents that can reason, plan, use tools and work effectively in digital environments.'],
+    intro: ['This Level 3 programme is designed for advanced undergraduates preparing for AI internships and careers in agentic AI systems. The focus is on AI agents, multi-agent architectures, browser agents and the Model Context Protocol (MCP): the frontier of applied AI today.', 'You gain a strong theoretical foundation along with hands-on experience designing, building and deploying autonomous AI agents that can reason, plan, use tools and work effectively in digital environments.'],
     modules: ['Introduction to AI Agents', 'Building AI Agents with LangGraph & CrewAI', 'Browser Agents', 'MCP, Tool Calling & Function Calling', 'Capstone Project', 'Assessments & Demo'],
     pdf: 'PROFESSIONAL CERTIFICATE IN AI AGENTS, AUTOMATION & DEPLOYMENT.pdf',
   },
@@ -106,3 +106,34 @@ export const FOCUS_COURSES: FocusCourse[] = [
     pdf: 'PROFESSIONAL CERTIFICATION IN GENERATIVE AI, FOUNDATION MODELS & FMOPS.pdf',
   },
 ];
+
+// Detail pages for the professional courses (drafted from the card copy; no brochures yet).
+const PRO_DETAILS: Record<string, Pick<FocusCourse, 'kicker' | 'blurb' | 'intro' | 'modules'>> = {
+  futurex: {
+    kicker: 'Career Accelerator', blurb: 'An advanced career programme bringing AI, cloud, automation and emerging tech together.',
+    intro: ['FutureX is our flagship career acceleration programme. It brings together AI, cloud computing, automation and emerging technologies so you can work confidently across the tools modern teams actually use.', 'Over 180 hours of guided sessions, labs and live projects, you build a portfolio that shows employers what you can do, not just what you have studied.'],
+    modules: ['Digital Foundations & Problem Solving', 'Applied AI & Generative AI Tools', 'Cloud Computing Essentials', 'Automation & Low-Code Workflows', 'Data Literacy for Decision Making', 'Emerging Tech: IoT, Blockchain & AR/VR', 'Innovation & Product Thinking', 'Capstone Project', 'Career Readiness & Interview Prep'],
+  },
+  'ai-ml': {
+    kicker: 'Professional Course in', blurb: 'Learn AI, machine learning, deep learning and generative AI through real-world projects.',
+    intro: ['Learn how modern AI really works, from classic machine learning to deep learning and generative AI, and use it to build working solutions.', 'This 180-hour course moves from Python and statistics through to neural networks, LLMs and deployment, with hands-on projects at every stage.'],
+    modules: ['Python for AI', 'Statistics & Maths for Machine Learning', 'Supervised & Unsupervised Learning', 'Model Evaluation & Feature Engineering', 'Deep Learning & Neural Networks', 'Computer Vision & NLP', 'Generative AI & Large Language Models', 'Deploying ML Models', 'Capstone Project'],
+  },
+  cyber: {
+    kicker: 'Professional Course in', blurb: 'Hands-on cyber defence, penetration testing, ethical hacking and digital forensics.',
+    intro: ['Develop practical skills in cyber defence, penetration testing, ethical hacking and digital forensics, taking you from beginner to advanced.', 'You practise in safe lab environments on real tools and scenarios, learning to think like an attacker so you can protect systems like a defender.'],
+    modules: ['Networking & Security Fundamentals', 'Linux & Windows for Security', 'Threats, Vulnerabilities & Risk', 'Ethical Hacking & Penetration Testing', 'Web Application Security', 'Network Defence & SOC Operations', 'Cloud Security Basics', 'Digital Forensics & Incident Response', 'Capstone Project'],
+  },
+  fullstack: {
+    kicker: 'Professional Course in', blurb: 'Master frontend and backend development and ship real web apps to the cloud.',
+    intro: ['Become a professional web developer by mastering both frontend and backend technologies through live projects.', 'Over 180 hours you go from HTML and JavaScript to full applications with React, Node.js, databases and cloud deployment, graduating with job-ready projects in your portfolio.'],
+    modules: ['HTML, CSS & Responsive Design', 'Modern JavaScript', 'React & Frontend Frameworks', 'Node.js & Express APIs', 'Databases: SQL & MongoDB', 'Authentication & Security', 'Git, Testing & DevOps Basics', 'Cloud Deployment', 'Capstone Project'],
+  },
+  data: {
+    kicker: 'Professional Course in', blurb: 'Analyse, visualise and model data, and turn it into business decisions.',
+    intro: ['Gain expertise in data analysis, visualisation, predictive modelling and business intelligence platforms.', 'You work with real datasets using Excel, SQL, Python, Power BI and Tableau, learning to turn messy data into clear answers that people can act on.'],
+    modules: ['Data Analysis with Excel', 'SQL for Analytics', 'Python for Data Science', 'Data Cleaning & Wrangling', 'Statistics & Exploratory Analysis', 'Data Visualisation with Power BI & Tableau', 'Predictive Modelling', 'Business Intelligence & Storytelling', 'Capstone Project'],
+  },
+};
+export const PRO_COURSES: FocusCourse[] = COURSES.map((c) => ({ slug: c.slug, img: c.img.replace('/media/', '').replace('.jpg', ''), level: c.level, title: c.title, duration: c.duration, ...PRO_DETAILS[c.slug] }));
+export const ALL_COURSES = [...FOCUS_COURSES, ...PRO_COURSES];

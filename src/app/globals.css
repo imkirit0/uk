@@ -226,6 +226,10 @@ a.strat-std-card{display:block;color:inherit}
 .card__meta span{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;}
 .card__link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--red);margin-top:auto;transition:all 0.3s;}
 .card__link:hover{gap:16px;color:var(--coral);}
+.card__links{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+.card__links .card__link{margin-top:0}
+.card__enq{font-size:14px;font-weight:600;color:rgba(255,255,255,.75);padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);transition:all .25s}
+.card__enq:hover{color:#fff;background:rgba(255,255,255,.1)}
 .card__glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.1),transparent 40%);opacity:0;transition:opacity 0.3s;}
 
 /* ---- why ---- */

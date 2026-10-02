@@ -60,9 +60,10 @@ export default function Courses() {
               </div>
               <p className="card__desc">{c.desc}</p>
               <div className="card__meta"><span>{c.duration}</span><span>{c.level}</span></div>
-              <a href="#enquire" className="card__link" onClick={() => dispatchEvent(new CustomEvent('pick-course', { detail: c.title }))}>
-                Enquire about this course <span aria-hidden>→</span>
-              </a>
+              <div className="card__links">
+                <a href={`/courses/${c.slug}`} className="card__link">View course details <span aria-hidden>→</span></a>
+                <a href="#enquire" className="card__enq" onClick={() => dispatchEvent(new CustomEvent('pick-course', { detail: c.title }))}>Enquire</a>
+              </div>
               <div className="card__glare" aria-hidden />
             </article>
           ))}
