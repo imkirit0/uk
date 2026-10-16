@@ -11,10 +11,9 @@ export const SITE = {
     postalCode: 'NW10 7PN',
     country: 'GB',
   },
-  registered: { street: '115 London Road', locality: 'Morden, England', postalCode: 'SM4 5HP' },
   social: {
-    facebook: 'https://www.facebook.com/profile.php?id=61592236351449',
-    instagram: 'https://www.instagram.com/gtec.uk/',
+    facebook: 'https://www.gteceducation.com',
+    instagram: 'https://www.gteceducation.com',
     linkedin: 'https://www.linkedin.com/company/g-tec-groupofinstitutions',
   },
   ukprn: '10101903',
