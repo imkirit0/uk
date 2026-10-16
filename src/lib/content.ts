@@ -12,8 +12,8 @@ export const SITE = {
     country: 'GB',
   },
   social: {
-    facebook: 'https://www.gteceducation.com',
-    instagram: 'https://www.gteceducation.com',
+    facebook: 'https://www.facebook.com/share/18W7yu3Kjq/',
+    instagram: 'https://www.instagram.com/teamgtec',
     linkedin: 'https://www.linkedin.com/company/g-tec-groupofinstitutions',
   },
   ukprn: '10101903',

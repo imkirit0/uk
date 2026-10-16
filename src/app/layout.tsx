@@ -31,7 +31,7 @@ const jsonLd = {
   telephone: SITE.phone,
   email: SITE.email,
   address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.locality, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
-  sameAs: [SITE.social.linkedin, SITE.global],
+  sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.linkedin, SITE.global],
   parentOrganization: { '@type': 'Organization', name: 'G-TEC EDUCATION', url: SITE.global },
   hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Professional courses', itemListElement: COURSES.map((c) => ({ '@type': 'Course', name: c.title, description: c.desc, provider: { '@type': 'Organization', name: SITE.name } })) },
 };
